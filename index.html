@@ -183,11 +183,92 @@
             gap: 20px;
         }
 
+
+        /* ---------- VIDEO ---------- */
+
+        .video-card {
+            background: #21132e;
+
+            border: 1px solid #604274;
+
+            border-radius: 18px;
+
+            padding: 12px;
+
+            overflow: hidden;
+
+            grid-column: 1 / -1;
+
+            transition: 0.3s;
+        }
+
+        .video-card:hover {
+            border-color: #8b5a83;
+            transform: translateY(-3px);
+        }
+
+        .video-card video {
+            width: 100%;
+
+            display: block;
+
+            border-radius: 12px;
+
+            background: #000;
+
+            max-height: 500px;
+        }
+
+        .video-controls {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 5px 2px;
+        }
+
+        .video-controls button {
+            background: #8b5a83;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 16px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            font-size: 14px;
+        }
+
+        .video-controls button:hover {
+            background: #a36c9b;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 15px
+                rgba(139, 90, 131, 0.3);
+        }
+
+
+        /* ---------- MEDIA BOX ---------- */
+
         .media-box {
             height: 180px;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             background: #21132e;
@@ -199,6 +280,7 @@
             color: #aaa;
 
             text-align: center;
+
             padding: 20px;
         }
 
@@ -207,6 +289,7 @@
 
         .socials {
             display: flex;
+
             justify-content: center;
 
             flex-wrap: wrap;
@@ -232,6 +315,7 @@
 
         .social:hover {
             background: #8b5a83;
+
             transform: translateY(-3px);
         }
 
@@ -263,6 +347,7 @@
 
             nav a {
                 margin-left: 8px;
+
                 font-size: 12px;
             }
 
@@ -278,16 +363,27 @@
                 padding: 22px;
             }
 
+            .video-controls {
+                gap: 6px;
+            }
+
+            .video-controls button {
+                padding: 9px 11px;
+
+                font-size: 13px;
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- NAVIGATION -->
+    <!-- ---------- NAVIGATION ---------- -->
 
     <nav>
 
@@ -296,17 +392,30 @@
         </div>
 
         <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#media">Media</a>
-            <a href="#contact">Contact</a>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#media">
+                Media
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
         </div>
 
     </nav>
 
 
 
-    <!-- HERO -->
+    <!-- ---------- HERO ---------- -->
 
     <div class="hero" id="home">
 
@@ -331,7 +440,7 @@
 
 
 
-    <!-- ABOUT -->
+    <!-- ---------- ABOUT ---------- -->
 
     <section id="about">
 
@@ -375,7 +484,7 @@
 
 
 
-    <!-- MEDIA -->
+    <!-- ---------- MEDIA ---------- -->
 
     <section id="media">
 
@@ -385,20 +494,76 @@
 
         <div class="media-grid">
 
+
+            <!-- VIDEO -->
+
+            <div class="video-card">
+
+                <video
+                    id="myVideo"
+                    preload="metadata"
+                    playsinline>
+
+                    <source
+                        src="VID_20260920_122412_447.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support
+                    video playback.
+
+                </video>
+
+
+                <!-- VIDEO CONTROLS -->
+
+                <div class="video-controls">
+
+                    <button onclick="skipVideo(-10)">
+                        ↶ 10s
+                    </button>
+
+                    <button
+                        onclick="togglePlay()"
+                        id="playBtn">
+
+                        ▶ Play
+
+                    </button>
+
+                    <button onclick="skipVideo(10)">
+                        10s ↷
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PHOTO -->
+
             <div class="media-box">
-                📸<br>
+
+                📸
+                <br>
+
                 Photos coming soon
+
             </div>
 
-            <div class="media-box">
-                🎥<br>
-                Videos coming soon
-            </div>
+
+
+            <!-- MUSIC -->
 
             <div class="media-box">
-                🎵<br>
+
+                🎵
+                <br>
+
                 Music coming soon
+
             </div>
+
 
         </div>
 
@@ -406,7 +571,7 @@
 
 
 
-    <!-- CONTACT -->
+    <!-- ---------- CONTACT ---------- -->
 
     <section id="contact">
 
@@ -416,22 +581,33 @@
 
         <div class="socials">
 
-            <a class="social"
-               href="https://instagram.com/zuck"
-               target="_blank">
+            <a
+                class="social"
+                href="https://instagram.com/zuck"
+                target="_blank">
+
                 Instagram
+
             </a>
 
-            <a class="social"
-               href="https://youtube.com/"
-               target="_blank">
+
+            <a
+                class="social"
+                href="https://youtube.com/"
+                target="_blank">
+
                 YouTube
+
             </a>
 
-            <a class="social"
-               href="https://t.me/RajputTushaar"
-               target="_blank">
+
+            <a
+                class="social"
+                href="https://t.me/RajputTushaar"
+                target="_blank">
+
                 Telegram
+
             </a>
 
         </div>
@@ -440,7 +616,7 @@
 
 
 
-    <!-- FOOTER -->
+    <!-- ---------- FOOTER ---------- -->
 
     <footer>
 
@@ -452,6 +628,810 @@
         © 2026
 
     </footer>
+
+
+
+    <!-- ---------- VIDEO JAVASCRIPT ---------- -->
+
+    <script>
+
+        const video =
+            document.getElementById("myVideo");
+
+        const playBtn =
+            document.getElementById("playBtn");
+
+
+        // Play / Pause
+
+        function togglePlay() {
+
+            if (video.paused) {
+
+                video.play();
+
+                playBtn.textContent =
+                    "⏸ Pause";
+
+            } else {
+
+                video.pause();
+
+                playBtn.textContent =
+                    "▶ Play";
+
+            }
+
+        }
+
+
+        // 10 seconds forward / backward
+
+        function skipVideo(seconds) {
+
+            video.currentTime += seconds;
+
+        }
+
+
+        // Update button when video ends
+
+        video.addEventListener(
+            "ended",
+            function () {
+
+                playBtn.textContent =
+                    "▶ Play";
+
+            }
+        );
+
+
+        // Update button when paused
+
+        video.addEventListener(
+            "pause",
+            function () {
+
+                playBtn.textContent =
+                    "▶ Play";
+
+            }
+        );
+
+
+        // Update button when playing
+
+        video.addEventListener(
+            "play",
+            function () {
+
+                playBtn.textContent =
+                    "⏸ Pause";
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+    </html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tushar — Personal Website</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #10091a;
+            color: #eee;
+            line-height: 1.6;
+        }
+
+        /* ---------- NAVBAR ---------- */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(16, 9, 26, 0.85);
+            backdrop-filter: blur(10px);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d8b4fe;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d8b4fe;
+        }
+
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 20px 60px;
+
+            background:
+                radial-gradient(circle at top,
+                #40205c,
+                #10091a 55%);
+        }
+
+        .symbol {
+            font-size: 28px;
+            color: #d8b4fe;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 12vw, 80px);
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #d8b4fe;
+        }
+
+        .hero p {
+            color: #aaa;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 12px 24px;
+
+            background: #8b5a83;
+            color: #fff;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+            border: none;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #a36c9b;
+            box-shadow: 0 10px 25px rgba(139, 90, 131, 0.3);
+        }
+
+
+        /* ---------- SECTIONS ---------- */
+
+        section {
+            padding: 90px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #d8b4fe;
+        }
+
+
+        /* ---------- CARD ---------- */
+
+        .card {
+            background: #1d1129;
+            border: 1px solid #332044;
+
+            padding: 30px;
+            border-radius: 20px;
+
+            margin-bottom: 20px;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #684b7d;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #aaa;
+        }
+
+
+        /* ---------- MEDIA ---------- */
+
+        .media-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 20px;
+        }
+
+
+        /* ---------- VIDEO ---------- */
+
+        .video-card {
+            background: #21132e;
+
+            border: 1px solid #604274;
+
+            border-radius: 18px;
+
+            padding: 12px;
+
+            overflow: hidden;
+
+            grid-column: 1 / -1;
+
+            transition: 0.3s;
+        }
+
+        .video-card:hover {
+            border-color: #8b5a83;
+            transform: translateY(-3px);
+        }
+
+        .video-card video {
+            width: 100%;
+
+            display: block;
+
+            border-radius: 12px;
+
+            background: #000;
+
+            max-height: 500px;
+        }
+
+        .video-controls {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 5px 2px;
+        }
+
+        .video-controls button {
+            background: #8b5a83;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 16px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            font-size: 14px;
+        }
+
+        .video-controls button:hover {
+            background: #a36c9b;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 15px
+                rgba(139, 90, 131, 0.3);
+        }
+
+
+        /* ---------- MEDIA BOX ---------- */
+
+        .media-box {
+            height: 180px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: #21132e;
+
+            border: 1px dashed #604274;
+
+            border-radius: 18px;
+
+            color: #aaa;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+
+        /* ---------- SOCIAL ---------- */
+
+        .socials {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .social {
+            text-decoration: none;
+
+            color: #eee;
+
+            background: #21132e;
+
+            padding: 12px 18px;
+
+            border-radius: 12px;
+
+            border: 1px solid #39264a;
+
+            transition: 0.3s;
+        }
+
+        .social:hover {
+            background: #8b5a83;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #777;
+
+            border-top: 1px solid #24152f;
+        }
+
+        footer span {
+            color: #d8b4fe;
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px;
+            }
+
+            nav a {
+                margin-left: 8px;
+
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            section {
+                padding: 70px 18px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            .video-controls {
+                gap: 6px;
+            }
+
+            .video-controls button {
+                padding: 9px 11px;
+
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ---------- NAVIGATION ---------- -->
+
+    <nav>
+
+        <div class="logo">
+            TR ༘⋆
+        </div>
+
+        <div>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#media">
+                Media
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ---------- HERO ---------- -->
+
+    <div class="hero" id="home">
+
+        <div class="symbol">
+            ༘⋆
+        </div>
+
+        <h1>
+            Hey, I'm <span>Tushar</span>
+        </h1>
+
+        <p>
+            Welcome to my little corner of the internet.
+            Something new is always coming.
+        </p>
+
+        <a class="btn" href="#about">
+            Explore ↓
+        </a>
+
+    </div>
+
+
+
+    <!-- ---------- ABOUT ---------- -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="card">
+
+            <h3>
+                👋 Who am I?
+            </h3>
+
+            <p>
+                I'm Tushar. This website is my personal
+                space where I'll share things I'm working
+                on, interesting stuff, photos, videos and
+                whatever comes next.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                ✦ A little detail
+            </h3>
+
+            <p>
+                TR ༘⋆
+            </p>
+
+            <p>
+                Born: 14 November
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ---------- MEDIA ---------- -->
+
+    <section id="media">
+
+        <h2 class="section-title">
+            My Media
+        </h2>
+
+        <div class="media-grid">
+
+
+            <!-- VIDEO -->
+
+            <div class="video-card">
+
+                <video
+                    id="myVideo"
+                    preload="metadata"
+                    playsinline>
+
+                    <source
+                        src="VID_20260920_122412_447.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support
+                    video playback.
+
+                </video>
+
+
+                <!-- VIDEO CONTROLS -->
+
+                <div class="video-controls">
+
+                    <button onclick="skipVideo(-10)">
+                        ↶ 10s
+                    </button>
+
+                    <button
+                        onclick="togglePlay()"
+                        id="playBtn">
+
+                        ▶ Play
+
+                    </button>
+
+                    <button onclick="skipVideo(10)">
+                        10s ↷
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PHOTO -->
+
+            <div class="media-box">
+
+                📸
+                <br>
+
+                Photos coming soon
+
+            </div>
+
+
+
+            <!-- MUSIC -->
+
+            <div class="media-box">
+
+                🎵
+                <br>
+
+                Music coming soon
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ---------- CONTACT ---------- -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Find Me
+        </h2>
+
+        <div class="socials">
+
+            <a
+                class="social"
+                href="https://instagram.com/zuck"
+                target="_blank">
+
+                Instagram
+
+            </a>
+
+
+            <a
+                class="social"
+                href="https://youtube.com/"
+                target="_blank">
+
+                YouTube
+
+            </a>
+
+
+            <a
+                class="social"
+                href="https://t.me/RajputTushaar"
+                target="_blank">
+
+                Telegram
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ---------- FOOTER ---------- -->
+
+    <footer>
+
+        Made with ♡ by
+        <span>Tushar</span>
+
+        <br>
+
+        © 2026
+
+    </footer>
+
+
+
+    <!-- ---------- VIDEO JAVASCRIPT ---------- -->
+
+    <script>
+
+        const video =
+            document.getElementById("myVideo");
+
+        const playBtn =
+            document.getElementById("playBtn");
+
+
+        // Play / Pause
+
+        function togglePlay() {
+
+            if (video.paused) {
+
+                video.play();
+
+                playBtn.textContent =
+                    "⏸ Pause";
+
+            } else {
+
+                video.pause();
+
+                playBtn.textContent =
+                    "▶ Play";
+
+            }
+
+        }
+
+
+        // 10 seconds forward / backward
+
+        function skipVideo(seconds) {
+
+            video.currentTime += seconds;
+
+        }
+
+
+        // Update button when video ends
+
+        video.addEventListener(
+            "ended",
+            function () {
+
+                playBtn.textContent =
+                    "▶ Play";
+
+            }
+        );
+
+
+        // Update button when paused
+
+        video.addEventListener(
+            "pause",
+            function () {
+
+                playBtn.textContent =
+                    "▶ Play";
+
+            }
+        );
+
+
+        // Update button when playing
+
+        video.addEventListener(
+            "play",
+            function () {
+
+                playBtn.textContent =
+                    "⏸ Pause";
+
+            }
+        );
+
+    </script>
 
 
 </body>
