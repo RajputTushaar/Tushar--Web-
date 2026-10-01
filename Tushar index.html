@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10091a">
+<title>Tushar Rajput — Web Studio</title>
+
+<style>
+:root{
+  --bg:#0b0710;
+  --card:#15101d;
+  --purple:#9b5cff;
+  --purple2:#6d35c9;
+  --text:#f7f2ff;
+  --muted:#aaa0b8;
+  --line:rgba(255,255,255,.09);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 80% 5%,#28133d 0,transparent 30%),
+    radial-gradient(circle at 10% 35%,#1a0e2a 0,transparent 28%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.wrap{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(11,7,16,.75);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-weight:800;
+  font-size:21px;
+}
+
+.logo span{
+  color:var(--purple);
+}
+
+.links{
+  display:flex;
+  gap:28px;
+  color:#c8c0d0;
+  font-size:14px;
+}
+
+.links a{
+  transition:.2s;
+}
+
+.links a:hover{
+  color:#fff;
+}
+
+/* HERO */
+
+.hero{
+  min-height:650px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:90px 0 70px;
+}
+
+.badge{
+  display:inline-flex;
+  padding:7px 14px;
+  border:1px solid rgba(155,92,255,.35);
+  background:rgba(155,92,255,.08);
+  border-radius:999px;
+  color:#cdafff;
+  font-size:13px;
+  margin-bottom:22px;
+}
+
+h1{
+  font-size:clamp(48px,8vw,92px);
+  line-height:.98;
+  letter-spacing:-4px;
+  max-width:900px;
+  margin:auto;
+}
+
+h1 span{
+  background:linear-gradient(100deg,#fff,#b678ff);
+  background-clip:text;
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+  max-width:680px;
+  margin:25px auto;
+  color:var(--muted);
+  font-size:18px;
+}
+
+.btns{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.btn{
+  padding:13px 21px;
+  border-radius:12px;
+  font-weight:700;
+  border:1px solid var(--line);
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.primary{
+  background:var(--purple);
+  color:#100818;
+  box-shadow:0 12px 40px rgba(155,92,255,.22);
+}
+
+.secondary{
+  background:rgba(255,255,255,.04);
+}
+
+/* SECTIONS */
+
+section{
+  padding:85px 0;
+}
+
+.eyebrow{
+  color:#a96cff;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.title{
+  font-size:38px;
+  letter-spacing:-1.5px;
+  margin:8px 0 10px;
+}
+
+.sub{
+  color:var(--muted);
+  max-width:650px;
+}
+
+/* SERVICES */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:35px;
+}
+
+.card{
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.055),
+    rgba(255,255,255,.02)
+  );
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:26px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(155,92,255,.4);
+}
+
+.icon{
+  font-size:27px;
+  margin-bottom:17px;
+}
+
+.card h3{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* WORK */
+
+.project{
+  min-height:210px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(145deg,#27153c,#120b19);
+}
+
+.project:before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:#9b5cff;
+  filter:blur(80px);
+  opacity:.22;
+  right:-50px;
+  top:-60px;
+}
+
+.tag{
+  position:relative;
+  color:#cdafff;
+  font-size:12px;
+  margin-bottom:7px;
+}
+
+.project h3,
+.project p{
+  position:relative;
+}
+
+/* ABOUT */
+
+.about{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:30px;
+}
+
+.profile{
+  border-radius:24px;
+  padding:32px;
+  background:linear-gradient(150deg,#1c1027,#0f0a15);
+  border:1px solid var(--line);
+}
+
+.facts{
+  display:grid;
+  gap:12px;
+}
+
+.fact{
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:rgba(255,255,255,.025);
+}
+
+.fact b{
+  display:block;
+  font-size:13px;
+  color:#8f859a;
+  margin-bottom:2px;
+}
+
+.fact span{
+  font-weight:700;
+}
+
+/* SECURITY */
+
+.security{
+  margin-top:35px;
+  padding:30px;
+  border-radius:22px;
+  border:1px solid rgba(155,92,255,.2);
+  background:rgba(155,92,255,.04);
+}
+
+.security h3{
+  margin-bottom:8px;
+}
+
+.security p{
+  color:var(--muted);
+}
+
+/* CTA */
+
+.cta{
+  border:1px solid rgba(155,92,255,.25);
+  background:
+    radial-gradient(circle at 90% 0,#32194c,transparent 35%),
+    #130c1c;
+  border-radius:28px;
+  padding:55px;
+  text-align:center;
+}
+
+.cta p{
+  color:var(--muted);
+  margin:10px auto 22px;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 0;
+  color:#82798d;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* MOBILE */
+
+@media(max-width:760px){
+
+  .links{
+    display:none;
+  }
+
+  .hero{
+    min-height:570px;
+    padding-top:60px;
+  }
+
+  h1{
+    letter-spacing:-2.5px;
+  }
+
+  .grid,
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .cta{
+    padding:35px 22px;
+  }
+
+  footer{
+    display:block;
+    text-align:center;
+  }
+
+  footer div+div{
+    margin-top:8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+  <div class="wrap nav">
+
+    <a class="logo" href="#">
+      Tushar<span>.</span>
+    </a>
+
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="wrap">
+
+    <div class="badge">
+      ✦ WEB DESIGN • DEVELOPMENT • SECURITY
+    </div>
+
+    <h1>
+      Websites that make<br>
+      <span>your brand stand out.</span>
+    </h1>
+
+    <p>
+      I'm Tushar Rajput. I design and build modern,
+      responsive websites for creators, businesses and
+      personal brands — with a focus on clean visuals,
+      performance and strong first impressions.
+    </p>
+
+    <div class="btns">
+
+      <a class="btn primary" href="#contact">
+        Start a project ↗
+      </a>
+
+      <a class="btn secondary" href="#work">
+        View my work
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      What I do
+    </div>
+
+    <h2 class="title">
+      Services built for the internet.
+    </h2>
+
+    <p class="sub">
+      From a simple landing page to a complete online
+      presence, I can build a polished experience around
+      your goals.
+    </p>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="icon">◈</div>
+
+        <h3>
+          Website Design
+        </h3>
+
+        <p>
+          Modern, responsive layouts designed to make
+          your brand look professional on phones,
+          tablets and desktops.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">⌁</div>
+
+        <h3>
+          Website Development
+        </h3>
+
+        <p>
+          Fast, clean and responsive websites with
+          smooth interactions and a strong user
+          experience.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">⌕</div>
+
+        <h3>
+          Social Media Security
+        </h3>
+
+        <p>
+          Help with account-security practices,
+          recovery guidance, privacy settings and
+          safer social-media setups.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="security">
+
+      <h3>
+        🔐 Social Media Security Help
+      </h3>
+
+      <p>
+        Need help securing a social account? I provide
+        guidance for improving account security,
+        recovery preparation, privacy settings,
+        two-factor authentication and safer account
+        practices.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WORK -->
+
+<section id="work">
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      Selected concepts
+    </div>
+
+    <h2 class="title">
+      Made to be remembered.
+    </h2>
+
+    <p class="sub">
+      Example projects I can create for different
+      types of clients.
+    </p>
+
+
+    <div class="grid">
+
+      <div class="card project">
+
+        <div class="tag">
+          01 / BUSINESS
+        </div>
+
+        <h3>
+          Local Business Website
+        </h3>
+
+        <p>
+          Services, location, testimonials and
+          enquiry flow.
+        </p>
+
+      </div>
+
+
+      <div class="card project">
+
+        <div class="tag">
+          02 / CREATOR
+        </div>
+
+        <h3>
+          Creator Portfolio
+        </h3>
+
+        <p>
+          Personal brand, media showcase and
+          social links.
+        </p>
+
+      </div>
+
+
+      <div class="card project">
+
+        <div class="tag">
+          03 / STARTUP
+        </div>
+
+        <h3>
+          Product Landing Page
+        </h3>
+
+        <p>
+          Conversion-focused product presentation.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="wrap about">
+
+    <div class="profile">
+
+      <div class="eyebrow">
+        About
+      </div>
+
+      <h2 class="title">
+        A small studio feel.<br>
+        A serious finish.
+      </h2>
+
+      <p class="sub">
+        I'm Tushar Rajput, focused on creating websites
+        that feel modern, personal and trustworthy.
+        Every project is built around the client's
+        identity instead of using a one-size-fits-all
+        template.
+      </p>
+
+      <div class="btns" style="justify-content:flex-start">
+
+        <a
+          class="btn secondary"
+          href="https://t.me/RajputTushaar"
+          target="_blank"
+        >
+          Telegram ↗
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="facts">
+
+      <div class="fact">
+        <b>NAME</b>
+        <span>Tushar Rajput</span>
+      </div>
+
+      <div class="fact">
+        <b>BIRTHDAY</b>
+        <span>14 November</span>
+      </div>
+
+      <div class="fact">
+        <b>TELEGRAM</b>
+        <span>@RajputTushaar</span>
+      </div>
+
+      <div class="fact">
+        <b>FOCUS</b>
+        <span>Web • Design • Security</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="wrap">
+
+    <div class="cta">
+
+      <div class="eyebrow">
+        Have a project?
+      </div>
+
+      <h2 class="title">
+        Let's build something people remember.
+      </h2>
+
+      <p>
+        Tell me what you need and I'll help turn the
+        idea into a clean web experience.
+      </p>
+
+      <a
+        class="btn primary"
+        href="https://t.me/RajputTushaar"
+        target="_blank"
+      >
+        Message @RajputTushaar ↗
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div>
+    © 2026 Tushar Rajput
+  </div>
+
+  <div>
+    Built with intent. Designed for impact.
+  </div>
+
+</footer>
+
+</body>
+  </html>
